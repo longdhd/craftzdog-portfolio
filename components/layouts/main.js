@@ -10,6 +10,7 @@ const Main = ({children, router}) => {
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta property="og:image" content="https://longdang.vercel.app/card.png"/>
+                <meta property="og:image" content="https://cdn.dribbble.com/users/316787/screenshots/14452801/media/823f9d8cf10efeaad82760d2b757c9f4.png?compress=1&resize=400x300"/>
                 <title>Long Dang - Homepage</title>
             </Head>
 
