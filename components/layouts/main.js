@@ -9,6 +9,7 @@ const Main = ({children, router}) => {
         <Box as="main" pb={8}>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta property="og:image" content="https://longdang.vercel.app/card.png"/>
                 <title>Long Dang - Homepage</title>
             </Head>
 
