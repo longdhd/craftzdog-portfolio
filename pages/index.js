@@ -63,7 +63,7 @@ const Page = () => {
 
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            Work
+            About
           </Heading>
           <Paragraph>
             Long is a ReactJS and Unity developer based in Hochiminh City with a

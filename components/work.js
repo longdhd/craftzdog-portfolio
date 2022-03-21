@@ -20,7 +20,7 @@ export const Title = ({ children }) => (
 
 export const PostTitle = ({ children }) => (
     <Box>
-      <NextLink href="/works">
+      <NextLink href="/posts">
         <Link>Posts</Link>
       </NextLink>
       <span>
