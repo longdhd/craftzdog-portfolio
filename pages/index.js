@@ -40,7 +40,7 @@ const Page = () => {
             <Heading as="h2" variant="page-title">
               Long Dang
             </Heading>
-            <p>Developer - Explorer - Stoner</p>
+            <p>Developer - Explorer - Dreamer</p>
           </Box>
           <Box
             flexShrink={0}
@@ -72,8 +72,7 @@ const Page = () => {
             <NextLink href="/works">
               <Link>3D & Virtual Reality</Link>
             </NextLink>{' '}
-            projects. While not working, he's often caught being drunk or/and
-            high af.
+            projects. While not working, he's often caught running/jogging with his dog.
           </Paragraph>
           <Box align="center" my={4}>
             <NextLink href="/works">
@@ -104,7 +103,7 @@ const Page = () => {
           <Heading as="h3" variant="section-title">
             I ❤
           </Heading>
-          <Paragraph>Music, Meditation, Football, Cycling</Paragraph>
+          <Paragraph>Music, Meditation, Football, Running/Jogging</Paragraph>
         </Section>
 
         <Section delay={0.3}>

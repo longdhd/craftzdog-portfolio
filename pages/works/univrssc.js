@@ -8,25 +8,25 @@ const Work = () => {
     return (
         <Layout title="UniVR">
             <Container>
-                <Title>Univr.vn - Unicloud Group Hochiminh City<Badge ml={2}>2021</Badge></Title>
+                <Title>UniVR - Sunshine Sky City<Badge ml={2}>2021</Badge></Title>
                 <P>
-                    A real estate VR-tour website with several projects all over Vietnam.
+                    A real estate VR-tour application on iOS platform.
                 </P>
                 <List ml={4} my={4}>
                     <ListItem>
-                        <Meta>Website</Meta>
-                        <Link href="https://univr.vn/">https://univr.vn/ <ExternalLinkIcon mx="2px"/></Link>
+                        <Meta>Application</Meta>
+                        <Link href="https://apps.apple.com/us/app/univr-sunshine-sky-city/id1623812218">https://apps.apple.com/us/app/univr-sunshine-sky-city/id1623812218 <ExternalLinkIcon mx="2px"/></Link>
                     </ListItem>
                     <ListItem>
-                        <Meta>Browser</Meta>
-                        <span>Chrome - Safari - Microsoft Egde</span>
+                        <Meta>Platform</Meta>
+                        <span>iOS</span>
                     </ListItem>
                     <ListItem>
                         <Meta>Stack</Meta>
-                        <span>Next.js, Three.js, Ant.Design, Unity WebGL</span>
+                        <span>Unity 2020.3.24f1</span>
                     </ListItem>
                 </List>
-                <WorkImage src="/images/works/univr.jpg" alt="UniVR"/>
+                <WorkImage src="/images/works/univrssc.png" alt="Sky City"/>
             </Container>
         </Layout>
     )
