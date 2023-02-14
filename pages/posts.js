@@ -6,12 +6,8 @@ import { PostGridItem } from '../components/grid-item'
 import mekongRiver from '../public/images/contents/mekong-rivers.jpg'
 import { useEffect } from 'react'
 
-const Posts = (props) => {
-
-  useEffect(() => {
-    console.log(props)
-  }, [])
-  
+const Posts = props => {
+  console.log(props.allBlogs.data[0])
   return (
     <Layout title="Posts">
       <Container>
@@ -25,6 +21,12 @@ const Posts = (props) => {
               id="mekong"
               thumbnail={mekongRiver}
             ></PostGridItem>
+            {props?.allBlogs?.data.map((blog) => (
+              <div key={blog._id}>
+                <p>{blog._id}</p>
+                <p>{blog.title}</p>
+              </div>
+            ))}
           </SimpleGrid>
         </Section>
       </Container>
@@ -33,19 +35,17 @@ const Posts = (props) => {
 }
 
 export async function getServerSideProps(context) {
-  let res = await fetch("http://localhost:3000/api/blogs", {
-    method: "GET",
+  let res = await fetch('http://localhost:3000/api/blogs', {
+    method: 'GET',
     headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  let allBlogs = await res.json();
+      'Content-Type': 'application/json'
+    }
+  })
+  let allBlogs = await res.json()
 
   return {
-    props: { allBlogs },
-  };
+    props: { allBlogs }
+  }
 }
-
-
 
 export default Posts
