@@ -4,8 +4,14 @@ import Section from '../components/section'
 import { PostGridItem } from '../components/grid-item'
 
 import mekongRiver from '../public/images/contents/mekong-rivers.jpg'
+import { useEffect } from 'react'
 
-const Posts = () => {
+const Posts = (props) => {
+
+  useEffect(() => {
+    console.log(props)
+  }, [])
+  
   return (
     <Layout title="Posts">
       <Container>
@@ -25,5 +31,21 @@ const Posts = () => {
     </Layout>
   )
 }
+
+export async function getServerSideProps(context) {
+  let res = await fetch("http://localhost:3000/api/blogs", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  let allBlogs = await res.json();
+
+  return {
+    props: { allBlogs },
+  };
+}
+
+
 
 export default Posts

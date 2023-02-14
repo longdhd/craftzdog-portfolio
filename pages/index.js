@@ -52,7 +52,7 @@ const Page = () => {
               borderColor="whiteAlpha.800"
               borderWidth={2}
               borderStyle="solid"
-              maxWidth="100px"
+              maxWidth="180px"
               borderRadius="full"
               display="inline-block"
               src="/images/portrait.jpg"
