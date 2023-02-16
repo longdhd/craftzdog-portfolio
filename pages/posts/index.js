@@ -3,7 +3,7 @@ import Layout from '../../components/layouts/article'
 import Section from '../../components/section'
 import { PostGridItem } from '../../components/grid-item'
 
-import mekongRiver from '../public/images/contents/mekong-rivers.jpg'
+import mekongRiver from '../../public/images/contents/mekong-rivers.jpg'
 import { getBlogs } from '../api/blogs'
 import Link from 'next/link'
 
