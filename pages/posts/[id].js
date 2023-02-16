@@ -16,7 +16,7 @@ export const getStaticPaths = async () => {
   })
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 }
 
@@ -43,7 +43,7 @@ const Post = ({blog}) => {
     <Layout title="Mekong River">
       <Container>
         <PostTitle>
-          {blog.title || ``}
+            Mekong River
           <Badge ml={2}>2015</Badge>
         </PostTitle>
         <WorkImage src="/images/contents/mekong-rivers.jpg" alt="Mekong" />
