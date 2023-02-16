@@ -28,11 +28,10 @@ export const getStaticProps = async (context) => {
 }
 
 const Post = ({blog}) => {
-    console.log(blog)
     return (
         <Layout title="Mekong River">
             <Container>
-                <PostTitle>{blog.title}<Badge ml={2}>2015</Badge></PostTitle>
+                <PostTitle>{!blog ? `` : blog.title}<Badge ml={2}>2015</Badge></PostTitle>
                 <WorkImage src="/images/contents/mekong-rivers.jpg" alt="Mekong"/>
                 <P>
                     Con thuyền dần trôi về làng bè Thới Sơn. Những căn nhà nổi trên sông nuôi cá và nuôi cả những con người sinh sống trên đó. Dăm chú chó tò mò chạy ra xem vì tiếng máy thuyền.
