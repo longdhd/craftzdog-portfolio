@@ -4,6 +4,7 @@ import Layout from '../../components/layouts/article'
 import { PostTitle, WorkImage } from '../../components/work'
 import { getBlogs } from '../api/blogs'
 import { NEXT_URL } from '../../config'
+import { useRouter } from 'next/router'
 
 export const getStaticPaths = async () => {
   const res = await getBlogs()
@@ -29,18 +30,20 @@ export const getStaticProps = async context => {
       'User-Agent': '*'
     }
   })
-  const jsonData = await res.json();
+  const jsonData = await res.json()
   return {
     props: { blog: jsonData.data }
   }
 }
 
-const Post = (props) => {
+const Post = (props = {}) => {
+  const router = useRouter()
+  if (router.isFallback) return null
   return (
     <Layout title="Mekong River">
       <Container>
         <PostTitle>
-          {props.blog != null ? props.blog.title : ``}
+          {props.blog.title || ``}
           <Badge ml={2}>2015</Badge>
         </PostTitle>
         <WorkImage src="/images/contents/mekong-rivers.jpg" alt="Mekong" />
