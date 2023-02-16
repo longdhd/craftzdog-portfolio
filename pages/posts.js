@@ -20,7 +20,7 @@ const Posts = props => {
               id="mekong"
               thumbnail={mekongRiver}
             ></PostGridItem>
-            {props?.allBlogs?.data.map(blog => (
+            {props?.allBlogs?.data?.map(blog => (
               <div key={blog._id}>
                 <p>{blog._id}</p>
                 <p>{blog.title}</p>
