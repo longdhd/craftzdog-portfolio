@@ -1,10 +1,10 @@
 import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
-import Layout from '../components/layouts/article'
-import Section from '../components/section'
-import { PostGridItem } from '../components/grid-item'
+import Layout from '../../components/layouts/article'
+import Section from '../../components/section'
+import { PostGridItem } from '../../components/grid-item'
 
 import mekongRiver from '../public/images/contents/mekong-rivers.jpg'
-import { getBlogs } from './api/blogs'
+import { getBlogs } from '../api/blogs'
 import Link from 'next/link'
 
 const Posts = props => {
