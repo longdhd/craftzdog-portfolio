@@ -10,7 +10,8 @@ export default async function handler(req, res) {
       const blog = await db.collection('blogs').findOne({
         _id: new ObjectId(req.query.id)
       });
-      res.json({ status: 200, data: blog })
+      // res.json({ status: 200, data: blog })
+      res.status(200).json(JSON.stringify(blog))
       break;
   }
 }

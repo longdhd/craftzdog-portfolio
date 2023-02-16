@@ -32,7 +32,7 @@ export const getStaticProps = async context => {
   })
   const jsonData = await res.json()
   return {
-    props: { blog: jsonData.data }
+    props: { blog: jsonData }
   }
 }
 
@@ -43,7 +43,7 @@ const Post = ({blog}) => {
     <Layout title="Mekong River">
       <Container>
         <PostTitle>
-            Mekong River
+            {blog.title}
           <Badge ml={2}>2015</Badge>
         </PostTitle>
         <WorkImage src="/images/contents/mekong-rivers.jpg" alt="Mekong" />
