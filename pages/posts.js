@@ -5,6 +5,7 @@ import { PostGridItem } from '../components/grid-item'
 
 import mekongRiver from '../public/images/contents/mekong-rivers.jpg'
 import { useEffect } from 'react'
+import { NEXT_URL } from '../config'
 
 const Posts = props => {
   return (
@@ -36,7 +37,7 @@ const Posts = props => {
 }
 
 export async function getServerSideProps(context) {
-  let res = await fetch('http://localhost:3000/api/blogs', {
+  let res = await fetch(`${NEXT_URL}/api/blogs`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
