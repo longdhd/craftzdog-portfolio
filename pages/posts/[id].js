@@ -35,12 +35,12 @@ export const getStaticProps = async context => {
   }
 }
 
-const Post = ({ blog }) => {
+const Post = (props) => {
   return (
     <Layout title="Mekong River">
       <Container>
         <PostTitle>
-          {!blog ? `` : blog.title}
+          {props.blog != null ? props.blog.title : ``}
           <Badge ml={2}>2015</Badge>
         </PostTitle>
         <WorkImage src="/images/contents/mekong-rivers.jpg" alt="Mekong" />
