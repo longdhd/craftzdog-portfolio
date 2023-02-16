@@ -20,12 +20,14 @@ const Posts = props => {
               id="mekong"
               thumbnail={mekongRiver}
             ></PostGridItem>
-            {props?.allBlogs?.data?.map(blog => (
-              <div key={blog._id}>
-                <p>{blog._id}</p>
-                <p>{blog.title}</p>
-              </div>
-            ))}
+            {props?.allBlogs?.data
+              ? props?.allBlogs?.data.map(blog => (
+                  <div key={blog._id}>
+                    <p>{blog._id}</p>
+                    <p>{blog.title}</p>
+                  </div>
+                ))
+              : []}
           </SimpleGrid>
         </Section>
       </Container>
@@ -39,8 +41,8 @@ export async function getServerSideProps(context) {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      'User-Agent': '*',
-    },
+      'User-Agent': '*'
+    }
   })
   let allBlogs = await res.json()
 
