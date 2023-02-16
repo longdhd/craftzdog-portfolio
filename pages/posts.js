@@ -7,7 +7,6 @@ import mekongRiver from '../public/images/contents/mekong-rivers.jpg'
 import { useEffect } from 'react'
 
 const Posts = props => {
-  console.log(props.allBlogs.data[0])
   return (
     <Layout title="Posts">
       <Container>
@@ -21,7 +20,7 @@ const Posts = props => {
               id="mekong"
               thumbnail={mekongRiver}
             ></PostGridItem>
-            {props?.allBlogs?.data.map((blog) => (
+            {props?.allBlogs?.data.map(blog => (
               <div key={blog._id}>
                 <p>{blog._id}</p>
                 <p>{blog.title}</p>
@@ -38,8 +37,10 @@ export async function getServerSideProps(context) {
   let res = await fetch('http://localhost:3000/api/blogs', {
     method: 'GET',
     headers: {
-      'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'User-Agent': '*',
+    },
   })
   let allBlogs = await res.json()
 
