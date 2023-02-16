@@ -4,11 +4,10 @@ import Section from '../components/section'
 import { PostGridItem } from '../components/grid-item'
 
 import mekongRiver from '../public/images/contents/mekong-rivers.jpg'
-import { NEXT_URL } from '../config'
-import { getData } from './api/blogs'
+import { getBlogs } from './api/blogs'
+import Link from 'next/link'
 
 const Posts = props => {
-  console.log(props)
   return (
     <Layout title="Posts">
       <Container>
@@ -24,10 +23,12 @@ const Posts = props => {
             ></PostGridItem>
             {props?.res?.data
               ? props?.res?.data.map(blog => (
-                  <div key={blog._id}>
-                    <p>{blog._id}</p>
-                    <p>{blog.title}</p>
-                  </div>
+                  <Link href={'/posts/' + blog._id} key={blog._id}>
+                    <a>
+                      <p>{blog._id}</p>
+                      <p>{blog.title}</p>
+                    </a>
+                  </Link>
                 ))
               : []}
           </SimpleGrid>
@@ -38,7 +39,7 @@ const Posts = props => {
 }
 
 export async function getServerSideProps(context) {
-  let res = await getData();
+  let res = await getBlogs()
   return {
     props: { res }
   }

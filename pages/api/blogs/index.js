@@ -1,5 +1,5 @@
-import { NEXT_URL } from "../../config";
-import clientPromise from "../../libs/mongodb";
+import { NEXT_URL } from "../../../config";
+import clientPromise from "../../../libs/mongodb";
 
 export default async function handler(req, res) {
   const client = await clientPromise;
@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   }
 }
 
-export async function getData() {
+export async function getBlogs() {
   const response = await fetch(`${NEXT_URL}/api/blogs`, {
     method: 'GET',
     headers: {
@@ -21,6 +21,6 @@ export async function getData() {
       'User-Agent': '*'
     }
   })
-  const jsonData = await response.json()
+  const jsonData = await response.json();
   return jsonData
 }
