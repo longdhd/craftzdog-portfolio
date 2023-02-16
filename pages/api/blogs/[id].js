@@ -15,15 +15,15 @@ export default async function handler(req, res) {
   }
 }
 
-export async function getBlog(id) {
-  const response = await fetch(`${NEXT_URL}/api/blogs/${id}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-      'User-Agent': '*'
-    }
-  })
-  const jsonData = await response.json()
-  return jsonData
-}
+// export async function getBlog(id) {
+//   const response = await fetch(`${NEXT_URL}/api/blogs/${id}`, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       Accept: 'application/json',
+//       'User-Agent': '*'
+//     }
+//   })
+//   const jsonData = await response.json()
+//   return jsonData
+// }
