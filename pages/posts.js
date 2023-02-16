@@ -37,7 +37,7 @@ const Posts = props => {
   )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   let res = await getData();
   return {
     props: { res }
