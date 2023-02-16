@@ -16,7 +16,7 @@ export const getStaticPaths = async () => {
   })
   return {
     paths,
-    fallback: true
+    fallback: 'blocking'
   }
 }
 
@@ -36,14 +36,14 @@ export const getStaticProps = async context => {
   }
 }
 
-const Post = (props = {}) => {
+const Post = ({blog}) => {
   const router = useRouter()
-  if (router.isFallback) return null
+  if (!blog || router.isFallback) return null
   return (
     <Layout title="Mekong River">
       <Container>
         <PostTitle>
-          {props.blog.title || ``}
+          {blog.title || ``}
           <Badge ml={2}>2015</Badge>
         </PostTitle>
         <WorkImage src="/images/contents/mekong-rivers.jpg" alt="Mekong" />
