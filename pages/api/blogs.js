@@ -1,3 +1,4 @@
+import { NEXT_URL } from "../../config";
 import clientPromise from "../../libs/mongodb";
 
 export default async function handler(req, res) {
@@ -9,4 +10,17 @@ export default async function handler(req, res) {
       res.json({ status: 200, data: allBlogs });
       break;
   }
+}
+
+export async function getData() {
+  const response = await fetch(`${NEXT_URL}/api/blogs`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'User-Agent': '*'
+    }
+  })
+  const jsonData = await response.json()
+  return jsonData
 }

@@ -4,10 +4,11 @@ import Section from '../components/section'
 import { PostGridItem } from '../components/grid-item'
 
 import mekongRiver from '../public/images/contents/mekong-rivers.jpg'
-import { useEffect } from 'react'
 import { NEXT_URL } from '../config'
+import { getData } from './api/blogs'
 
 const Posts = props => {
+  console.log(props)
   return (
     <Layout title="Posts">
       <Container>
@@ -21,8 +22,8 @@ const Posts = props => {
               id="mekong"
               thumbnail={mekongRiver}
             ></PostGridItem>
-            {props?.allBlogs?.data
-              ? props?.allBlogs?.data.map(blog => (
+            {props?.res?.data
+              ? props?.res?.data.map(blog => (
                   <div key={blog._id}>
                     <p>{blog._id}</p>
                     <p>{blog.title}</p>
@@ -37,18 +38,9 @@ const Posts = props => {
 }
 
 export async function getServerSideProps(context) {
-  let res = await fetch(`${NEXT_URL}/api/blogs`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-      'User-Agent': '*'
-    }
-  })
-  let allBlogs = await res.json()
-
+  let res = await getData();
   return {
-    props: { allBlogs }
+    props: { res }
   }
 }
 
