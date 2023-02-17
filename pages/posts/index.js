@@ -21,7 +21,7 @@ const Posts = props => {
               id="mekong"
               thumbnail={mekongRiver}
             ></PostGridItem>
-            {props?.res?.data
+            {/* {props?.res?.data
               ? props?.res?.data.map(blog => (
                   <Link href={'/posts/' + blog._id} key={blog._id}>
                     <a>
@@ -30,7 +30,7 @@ const Posts = props => {
                     </a>
                   </Link>
                 ))
-              : []}
+              : []} */}
           </SimpleGrid>
         </Section>
       </Container>
