@@ -4,10 +4,11 @@ import Section from '../../components/section'
 import { PostGridItem } from '../../components/grid-item'
 
 import mekongRiver from '../../public/images/contents/mekong-rivers.jpg'
-import { getBlogs } from '../api/blogs'
 import Link from 'next/link'
+import clientPromise from '../../libs/mongodb'
 
 const Posts = props => {
+  console.log(props.res)
   return (
     <Layout title="Posts">
       <Container>
@@ -21,16 +22,14 @@ const Posts = props => {
               id="mekong"
               thumbnail={mekongRiver}
             ></PostGridItem>
-            {/* {props?.res?.data
-              ? props?.res?.data.map(blog => (
-                  <Link href={'/posts/' + blog._id} key={blog._id}>
-                    <a>
-                      <p>{blog._id}</p>
-                      <p>{blog.title}</p>
-                    </a>
-                  </Link>
-                ))
-              : []} */}
+            {/* {props?.res?.map(blog => (
+              <Link href={'/posts/' + blog._id} key={blog._id}>
+                <a>
+                  <p>{blog._id}</p>
+                  <p>{blog.title}</p>
+                </a>
+              </Link>
+            ))} */}
           </SimpleGrid>
         </Section>
       </Container>
@@ -38,10 +37,12 @@ const Posts = props => {
   )
 }
 
-export async function getServerSideProps(context) {
-  let res = await getBlogs()
+export async function getStaticProps(context) {
+  const client = await clientPromise
+  const db = client.db('node-tuts')
+  const allBlogs = await db.collection('blogs').find({}).toArray();
   return {
-    props: { res }
+    props: { res: JSON.parse(JSON.stringify(allBlogs)) }
   }
 }
 
