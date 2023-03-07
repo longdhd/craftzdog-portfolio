@@ -23,7 +23,7 @@ const Work = () => {
                     </ListItem>
                     <ListItem>
                         <Meta>Stack</Meta>
-                        <span>Next.js, Three.js, Ant.Design, Unity WebGL</span>
+                        <span>NextJS, ThreeJS, Antdesign, Unity WebGL</span>
                     </ListItem>
                 </List>
                 <WorkImage src="/images/works/univr.jpg" alt="UniVR"/>

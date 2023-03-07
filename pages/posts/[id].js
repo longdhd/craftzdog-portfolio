@@ -6,34 +6,6 @@ import { useEffect, useState } from 'react'
 import { ObjectId } from 'mongodb'
 import clientPromise from '../../libs/mongodb'
 
-export const getStaticPaths = async () => {
-  const client = await clientPromise;
-  const db = client.db('node-tuts')
-  const res = await db.collection("blogs").find({}).toArray();
-
-  const paths = res?.map(blog => {
-    return {
-      params: { id: blog._id.toString() }
-    }
-  })
-  
-  return {
-    paths,
-    fallback: true
-  }
-}
-
-export const getStaticProps = async context => {
-  const client = await clientPromise;
-  const db = client.db('node-tuts')
-  const blog = await db.collection('blogs').findOne({
-    _id: new ObjectId(context.params.id)
-  })
-  return {
-    props: { blog: JSON.parse(JSON.stringify(blog)) }
-  }
-}
-
 const Post = props => {
   const [blog, useBlog] = useState({})
   useEffect(() => {
@@ -71,6 +43,34 @@ const Post = props => {
       </Container>
     </Layout>
   )
+}
+
+export const getStaticPaths = async () => {
+  const client = await clientPromise;
+  const db = client.db('node-tuts')
+  const res = await db.collection("blogs").find({}).toArray();
+
+  const paths = res?.map(blog => {
+    return {
+      params: { id: blog._id.toString() }
+    }
+  })
+  
+  return {
+    paths,
+    fallback: true
+  }
+}
+
+export const getStaticProps = async context => {
+  const client = await clientPromise;
+  const db = client.db('node-tuts')
+  const blog = await db.collection('blogs').findOne({
+    _id: new ObjectId(context.params.id)
+  })
+  return {
+    props: { blog: JSON.parse(JSON.stringify(blog)) }
+  }
 }
 
 export default Post

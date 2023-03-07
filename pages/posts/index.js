@@ -4,11 +4,9 @@ import Section from '../../components/section'
 import { PostGridItem } from '../../components/grid-item'
 
 import mekongRiver from '../../public/images/contents/mekong-rivers.jpg'
-import Link from 'next/link'
 import clientPromise from '../../libs/mongodb'
 
 const Posts = props => {
-  console.log(props.res)
   return (
     <Layout title="Posts">
       <Container>

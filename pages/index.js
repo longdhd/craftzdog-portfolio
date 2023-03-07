@@ -7,7 +7,6 @@ import {
   Button,
   List,
   ListItem,
-  SimpleGrid,
   Icon,
   useColorModeValue
 } from '@chakra-ui/react'
@@ -20,6 +19,7 @@ import { BioSection, BioYear } from '../components/bio'
 import { GridItem} from '../components/grid-item'
 import {
   IoLogoFacebook,
+  IoLogoGithub,
   IoLogoInstagram
 } from 'react-icons/io5'
 const Page = () => {
@@ -112,13 +112,8 @@ const Page = () => {
           </Heading>
           <List>
             <ListItem>
-              <Link href="https://www.facebook.com/itsme.saigonese" target="_blank">
-                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoFacebook} />}>itsme.saigonese</Button>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link href="https://www.instagram.com/long.danghoangd/" target="_blank">
-                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoInstagram} />}>@long.danghoangd</Button>
+              <Link href="https://github.com/longdhd" target="_blank">
+                <Button variant="ghost" colorScheme="teal" leftIcon={<Icon as={IoLogoGithub} />}>longdhd</Button>
               </Link>
             </ListItem>
           </List>
