@@ -4,6 +4,7 @@ import Section from '../../components/section'
 import { PostGridItem } from '../../components/grid-item'
 
 import mekongRiver from '../../public/images/contents/mekong-rivers.jpg'
+import fightClub from '../../public/images/contents/fightclub.jpg'
 import clientPromise from '../../libs/mongodb'
 
 const Posts = props => {
@@ -15,6 +16,11 @@ const Posts = props => {
         </Heading>
         <Section delay={0.1}>
           <SimpleGrid columns={[1, 2, 3]} gap={6}>
+            <PostGridItem
+              title="Tản mạn những ngày nóng [Vietnamese]"
+              id="summer"
+              thumbnail={fightClub}
+            ></PostGridItem>
             <PostGridItem
               title="Tản mạn sông Tiền [Vietnamese]"
               id="mekong"
