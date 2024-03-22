@@ -40,13 +40,4 @@ const Posts = props => {
   )
 }
 
-export async function getStaticProps(context) {
-  const client = await clientPromise
-  const db = client.db('node-tuts')
-  const allBlogs = await db.collection('blogs').find({}).toArray();
-  return {
-    props: { res: JSON.parse(JSON.stringify(allBlogs)) }
-  }
-}
-
 export default Posts
