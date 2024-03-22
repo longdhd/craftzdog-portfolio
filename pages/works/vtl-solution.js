@@ -1,5 +1,5 @@
 import { Container, Badge, List, Link, ListItem } from '@chakra-ui/react'
-import {ExternalLinkIcon} from '@chakra-ui/icons'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 import { Meta, Title, WorkImage } from '../../components/work'
@@ -8,25 +8,25 @@ const Work = () => {
     return (
         <Layout title="UniVR">
             <Container>
-                <Title>Univr.vn - Unicloud Group Hochiminh City<Badge ml={2}>2022</Badge></Title>
+                <Title>Taste Gourmet Group Loyalty Program<Badge ml={2}>2023</Badge></Title>
                 <P>
-                    A real estate VR-tour website with several projects all over Vietnam.
+                    A landing page for Hongkong restaurants' loyalty program with modern and interactive animations.
                 </P>
                 <List ml={4} my={4}>
                     <ListItem>
                         <Meta>Website</Meta>
-                        <Link href="https://univr.vn/">https://univr.vn/ <ExternalLinkIcon mx="2px"/></Link>
+                        <Link href="https://www.vtl-vtl.com/showcase/taste-gourmet-group-loyalty-program-case-study">https://www.vtl-vtl.com/showcase/taste-gourmet-group-loyalty-program-case-study<ExternalLinkIcon mx="2px" /></Link>
                     </ListItem>
                     <ListItem>
                         <Meta>Browser</Meta>
-                        <span>Chrome - Safari - Microsoft Egde</span>
+                        <span>Chrome - Safari</span>
                     </ListItem>
                     <ListItem>
                         <Meta>Stack</Meta>
-                        <span>NextJS, ThreeJS, Antdesign, Unity WebGL</span>
+                        <span>HTML, CSS, Javascript, GSAP</span>
                     </ListItem>
                 </List>
-                <WorkImage src="/images/works/univr.jpg" alt="UniVR"/>
+                <WorkImage src="/images/works/vtl-solution.jpeg" alt="VTL Solution Ltd." />
             </Container>
         </Layout>
     )

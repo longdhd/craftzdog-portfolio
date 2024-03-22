@@ -8,7 +8,7 @@ const Work = () => {
     return (
         <Layout title="UniVR">
             <Container>
-                <Title>UniVR - Sunshine Sky City<Badge ml={2}>2021</Badge></Title>
+                <Title>UniVR - Sunshine Sky City<Badge ml={2}>2022</Badge></Title>
                 <P>
                     A real estate VR-tour application on iOS platform.
                 </P>

@@ -2,6 +2,7 @@ import { Container, Box, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
 import Section from '../components/section'
 import Layout from '../components/layouts/article'
 import { WorkGridItem } from '../components/grid-item'
+import thumbVtl from '../public/images/works/vtl-solution.jpeg'
 import thumbUnivr from '../public/images/works/univr.jpg'
 import thumbUnivrSSC from '../public/images/works/univrssc.png'
 import thumbWtb from '../public/images/works/wtb1.jpg'
@@ -15,6 +16,16 @@ const Works = () => {
         </Heading>
 
         <SimpleGrid colums={[1, 1, 2]} gap={6}>
+          <Section>
+            <WorkGridItem
+              id="vtl-solution"
+              title="Taste Gourmet Group Loyalty Program"
+              thumbnail={thumbVtl}
+            >
+              A landing page for Hongkong restaurants' loyalty program with modern and interactive animations.
+            </WorkGridItem>
+          </Section>
+
           <Section>
             <WorkGridItem
               id="univr"
