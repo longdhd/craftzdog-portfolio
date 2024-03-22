@@ -5,7 +5,6 @@ import { PostGridItem } from '../../components/grid-item'
 
 import mekongRiver from '../../public/images/contents/mekong-rivers.jpg'
 import fightClub from '../../public/images/contents/fightclub.jpg'
-import clientPromise from '../../libs/mongodb'
 
 const Posts = props => {
   return (
